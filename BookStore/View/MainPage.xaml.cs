@@ -10,6 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using BookStore.ViewModel;
+using BookStore.Model;
+
 namespace BookStore.View
 {
     /// <summary>
@@ -20,6 +23,23 @@ namespace BookStore.View
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            // AddBook(txtISBN, txtTitle, txtAuthor, txtYear, txtStatus);
+        }
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            if (BookGrid.SelectedIndex == -1)
+            {
+                return;
+            }
+            // BookGrid.Items.Remove(BookGrid.SelectedItem);
+
+            BookViewModel dc = (BookViewModel)App.Current.MainWindow.DataContext;
+            dc.RemoveBook((Book)BookGrid.SelectedItem);
         }
     }
 }

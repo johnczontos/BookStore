@@ -20,7 +20,8 @@ namespace BookStore
         {
             base.OnStartup(e);
             MainPage window = new MainPage();
-            UserViewModel VM = new UserViewModel();
+            // UserViewModel VM = new UserViewModel();
+            BookViewModel VM = new BookViewModel();
             window.DataContext = VM;
             window.Show();
         }

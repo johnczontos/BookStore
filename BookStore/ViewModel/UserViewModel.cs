@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
-using System.ComponentModel;
 
 using BookStore.Model;
 
